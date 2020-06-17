@@ -1,6 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    //this section is all for making the events draggable to the calendar
+    //this section is all for making the things draggable to the calendar
     var Draggable = FullCalendarInteraction.Draggable;
     var containerEl = document.getElementById('external-events');
 
@@ -33,10 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
       editable: true, //allows events to be edited - dragged, dropped, resized
       eventLimit: true, // allow "more" link when too many events
       events:{ //retrieving all events from db
-                url: '/api/events',
+                url: '/api/calendar',
                 method: 'GET',
                 failure: function() {
-                    alert('there was an error while fetching events!');
+                    alert('there was an error while fetching calendar events!');
                 }//,
                 //color: 'yellow',   // a non-ajax option
                 //textColor: 'black' // a non-ajax option
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
 
                 $.ajax( {
-                    url: "/api/event",
+                    url: "/api/calendar",
                     type: "POST",
                     data: newEvent,
                     success: function() {                        
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 
                 $.ajax( {
-                    url: "/api/event",
+                    url: "/api/calendar",
                     type: "POST",
                     data: newEvent,
                     success: function() {
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 };
                 
                 $.ajax( {
-                    url: "/api/event",
+                    url: "/api/calendar",
                     type: "PUT",
                     data: updatedEvent//,
                     // success: function() {                        
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // $.post("/api/event", newEvent);
                 $.ajax( {
-                    url: "/api/event",
+                    url: "/api/calendar",
                     type: "PUT",
                     data: updatedEvent//,
                     // success: function() {                        
