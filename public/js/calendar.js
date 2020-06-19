@@ -37,17 +37,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 method: 'GET',
                 failure: function() {
                     alert('there was an error while fetching calendar events!');
-                }//,
-                //color: 'yellow',   // a non-ajax option
-                //textColor: 'black' // a non-ajax option
+                },
+                textColor: 'white' // a non-ajax option
       },
       eventClick: function(info) { //clicking an event fires this
-                console.log(info)
-                alert('Title: ' + info.event.title);
-                alert('Description: ' + info.event.extendedProps.description);
-                alert('ID: ' + info.event.id);
-                // alert('Coordinates: ' + info.jsEvent.pageX + ',' + info.jsEvent.pageY);
-                // alert('View: ' + info.view.type);
+                function formatDate(date) {
+                    let month = date.getMonth() +1;
+                    month = month < 10 ? '0'+month : month;
+                    let day = date.getDate();
+                    day = day < 10 ? '0'+day : day;
+                    const strDate = date.getFullYear() + "-" + month + "-" + day
+                    let hours = date.getHours();
+                    hours = hours < 10 ? '0'+hours : hours;
+                    let minutes = date.getMinutes();
+                    minutes = minutes < 10 ? '0'+minutes : minutes;
+                    const strTime = "T" + hours + ':' + minutes;            
+                    return strDate + strTime;
+                }
+
+                $('#calendarModal').modal('show');
+                $("#title").val(info.event.title);
+                $("#description").val(info.event.extendedProps.description);
+                $("#startdt").val(formatDate(new Date(info.event.start)));
+                $("#enddt").val(formatDate(new Date(info.event.end)));                
+                $("#calendarID").text(info.event.id);
       },
       selectable: true, //allows dragging of event creation
       //selectMirror: true, //shows an event placeholder instead of highlighting times.  I removed this because
@@ -192,6 +205,35 @@ document.addEventListener('DOMContentLoaded', function() {
       // ]
     });
 
-    calendar.render();
+    $(window).load(function() {
+        calendar.render(); 
+        var savebtn = document.getElementById('editModalSave');
+        savebtn.addEventListener("click", updateCalendar);
+        function updateCalendar() {
+            $('#calendarModal').modal('hide');
+    
+            var updatedEvent = {
+                title: $("#title").val(),
+                description: $("#description").val(),
+                start: $("#startdt").val(),
+                end: $("#enddt").val(),
+                id: $("#calendarID").text()
+            };        
+            
+            $.ajax( {
+                url: "/api/calendar",
+                type: "PUT",
+                data: updatedEvent,
+                success: function() {
+                    //  calendar.removeAllEvents();  //clears all events.  Do this because the 'dropped' event remains,
+                    //                               //and when you re-retrieve, both events show, even though there is only
+                    //                               //really one there.                       
+                    calendar.refetchEvents(); //re-retrieves the calendar
+                     
+                }                    
+    
+             })
+        }                        
+    });
 });
 
