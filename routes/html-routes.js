@@ -1,12 +1,10 @@
-// Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
+const db = require("../models");
 
-module.exports = function(app) {
-  app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-  });
-
-  app.get("/manage", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/manage.html"));
-  });
+module.exports = function(app){
+  app.get("/", function (req, res) {
+    db.Students.findAll({raw: true}).then(function(data) {
+    console.log(data)
+    res.render("index", {Students: data});
+  })
+});
 };
