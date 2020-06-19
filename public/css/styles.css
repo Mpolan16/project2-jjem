@@ -24,7 +24,7 @@ html, body {
   cursor: move;
   padding: 3px;
 }
-
+ 
 a {
   color: white !important;
   border: rgba(128, 0, 128, 0.425) !important;
@@ -36,6 +36,7 @@ a {
   position: relative;
   z-index: 1;
   margin-left: 200px;
+
 }
 
 #calendar {
