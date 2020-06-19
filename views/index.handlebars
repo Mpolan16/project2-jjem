@@ -1,19 +1,82 @@
-<h2>Students</h2>
-<div>
-<ul>
-  
-  {{#each Students}}
-    <li>{{first_name}} {{last_name}}</li>
-  {{/each}}
-</ul>
-<div id='calendar'></div>
-<div id='external-events'>
-  <p>
-    <strong>Draggable Events</strong>
-  </p>
-    <div class='fc-event'>My Event 1</div>
-    <div class='fc-event'>My Event 2</div>
-    <div class='fc-event'>My Event 3</div>
-    <div class='fc-event'>My Event 4</div>
-    <div class='fc-event'>My Event 5</div>
-</div>
+<header class="navbar navbar-light bg-light">
+    <div class="navbar-brand mb-0 h1 text-center">Student Management System for Online Learning</div>
+</header>
+    
+<main class = "containter">
+  <div class = "row">
+    <div class = "card" id="external-events">
+        <p>
+        <strong>Students</strong>
+
+        <button class = "button" data-toggle="tooltip" data-placement="bottom" title="Add a Student">
+          <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          </svg>
+        </button>
+        <button class = "button" data-toggle="tooltip" data-placement="bottom" title="Delete Student">
+          <svg class="bi bi-x-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+          </svg>
+        </button>
+        
+
+        </p>
+
+        {{#each Students}}
+          <div class="fc-event" id="student">{{first_name}} {{last_name}}</div>
+        {{/each}}
+        
+    </div>
+
+    <div id="calendar"></div>
+
+    <!-- code for calendar edit event modal -->
+    <div class="modal fade" id="calendarModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="calendarModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header" id="editModalHeader">
+                  <h5 class="modal-title" id="calendarModalLabel">Edit Calendar Event</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body" id="editModalBody">
+                <form role="form" id="registerform" name="registerform" action="" method="post">
+                  <div class="form-group" id="editModalFormGroup">
+                      <p>
+                          Calendar ID: <span id="calendarID">1</span>
+                      </p>
+                      <!-- <label for="title" class="form-label">Title:<span class="required">*</span></label>
+                      <input type="text" class="form-control" id="title"/> -->
+                      <label for="students">Students:<span class="required">*</span></label>
+                      <select id="students" class="form-control"></select>
+                      <label for="description" class="form-label">Description:</label>
+                      <input type="text" class="form-control" id="description"/>  
+                      <label for="startdt" class="form-label">Start:<span class="required">*</span></label>
+                      <input type="datetime-local" class="form-control" id="startdt"/>
+                      <label for="enddt" class="form-label">End:<span class="required">*</span></label>
+                      <input type="datetime-local" class="form-control" id="enddt"/>
+                      <p aria-hidden="true" id="required-description">
+                        <span class="required">*</span>Required field
+                      </p>
+                      <p id="modalErrorText" class="hide">
+                        Please enter valid dates.
+                      </p>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" id="deleteEvent">Delete</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" id="editModalSave">Save</button>
+              </div>
+          </div>
+      </div>
+    </div>     
+    <!-- end edit event modal code    -->
+
+  </div>
+
+</main>

@@ -81,3 +81,41 @@ svg:hover + .bi {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.required {
+  color: red;
+}
+
+#deleteEvent{
+  margin-right: 80px;
+}
+
+#editModalHeader{
+  background-color: rgb(128, 0, 128, 0.425) !important;
+}
+
+#modalErrorText{
+  font-size: 12px;
+  color: red;
+  margin: 0;
+}
+
+#required-description{
+  margin: 0;
+}
+
+#editModalBody {
+  padding-bottom: 0;
+}
+
+#editModalFormGroup {
+  margin-bottom: 8px;
+}
+
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}

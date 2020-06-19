@@ -24,14 +24,14 @@ module.exports = function(app) {
 
   // GET route for getting all students
   app.get("/api/students", function(req, res) {
-    db.Student.findAll({}).then(function(dbStudents) {      
+    db.Students.findAll({}).then(function(dbStudents) {      
       res.json(dbStudents);
     });
   });  
 
   // GET route for getting one student
   app.get("/api/students/:id", function(req, res) {
-    db.Student.findOne({
+    db.Students.findOne({
       where: {
         id: req.params.id
       }      
@@ -57,7 +57,7 @@ module.exports = function(app) {
 
   // POST route for saving a new student
   app.post("/api/student", function(req, res) {
-    db.Student.create({
+    db.Students.create({
       first_name: req.body.first_name,
       last_name: req.body.last_name
     }).then(function(dbStudent) {      
@@ -80,7 +80,7 @@ module.exports = function(app) {
 
   // DELETE route for deleting a student.
   app.delete("/api/student/:id", function(req, res) {
-    db.Student.destroy({
+    db.Students.destroy({
       where: {
         id: req.params.id
       }
@@ -111,7 +111,7 @@ module.exports = function(app) {
   // PUT route for updating a student.
   app.put("/api/student", function(req, res) {
             
-    db.Student.update({
+    db.Students.update({
       first_name: req.body.first_name,
       last_name: req.body.last_name
     }, 
