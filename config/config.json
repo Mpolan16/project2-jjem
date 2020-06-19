@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "bc2020",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "bootcamp2020",
+    "password": "bc2020",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -17,7 +17,7 @@
   },
   "production": {
     "username": "root",
-    "password": "bootcamp2020",
+    "password": "bc2020",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
