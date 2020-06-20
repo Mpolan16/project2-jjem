@@ -120,3 +120,13 @@ a {
 span {
   display: inline-block;
 }
+
+.fc-button {
+  background-color: #2b2d42;
+  border: #2b2d42;
+}
+
+.fc-prev-button:hover .fc-icon-chevron-left, 
+.fc-next-button:hover .fc-icon-chevron-right {
+  color: #deaaff;
+}
