@@ -120,3 +120,12 @@ a {
 span {
   display: inline-block;
 }
+
+#smoslHeader {
+  text-align: center;
+  color:  rgba(87, 0, 99, 0.384);
+}
+
+.jumbotron {
+  background-color: white;
+}
