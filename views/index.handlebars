@@ -73,15 +73,19 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                    <form>
                         <div class="form-group">
                           <h5 class="form-text">Please enter the first and last name of the student you would like to delete.</h5>
-                          <label for="firstName">First Name:</label>
-                          <input type="name" class="form-control" id="dfirstName" >
                         </div>
-                        <div class="form-group">
-                          <label for="lastName">Last Name:</label>
-                          <input type="name" class="form-control" id="dlastName">
+                        <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {{#each Students}}
+                              <a class="fc-event dropdown-item deleteStu" href="#" id={{id}}>{{first_name}} {{last_name}}</a>
+                            {{/each}}
+                          </div>
                         </div>
                       </form>
                     </div>
@@ -98,7 +102,7 @@
     
 
     {{#each Students}}
-      <div class="fc-event" id="student">{{first_name}} {{last_name}}</div>
+      <div class="fc-event" id={{id}}>{{first_name}} {{last_name}}</div>
     {{/each}}
     </p>
     </div>
