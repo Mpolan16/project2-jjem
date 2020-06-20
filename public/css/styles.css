@@ -18,8 +18,8 @@ html, body {
 }
 
 #external-events .fc-event {
-  border: rgba(128, 0, 128, 0.425);
-  background:  rgba(128, 0, 128, 0.425);
+  border: rgba(87, 0, 99, 0.384);
+  background:  rgba(87, 0, 99, 0.384);
   margin: 1.1em 0;
   cursor: move;
   padding: 3px;
@@ -27,8 +27,8 @@ html, body {
  
 a {
   color: white !important;
-  border: rgba(128, 0, 128, 0.425) !important;
-  background:  rgba(128, 0, 128, 0.425) !important;
+  border: rgba(87, 0, 99, 0.384)!important;
+  background: rgba(87, 0, 99, 0.384) !important;
   padding: 3px !important;
 }
 
@@ -43,24 +43,6 @@ a {
   max-width: 900px;
   margin: 20px auto;
 }
-
-svg {
-  z-index: 3;
-  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
-  filter: gray; /* IE6-9 */
-  -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
-}
-
-svg:hover + .bi {
-  filter: none;
-  -webkit-filter: grayscale(0%);
-    display: inline-block;
-    }
   
 .button {
   margin: 3px;
@@ -91,7 +73,7 @@ svg:hover + .bi {
 }
 
 #editModalHeader{
-  background-color: rgb(128, 0, 128, 0.425) !important;
+  background-color: rgba(87, 0, 99, 0.384) !important;
 }
 
 #modalErrorText{
@@ -118,4 +100,23 @@ svg:hover + .bi {
 
 .hide {
   visibility: hidden;
+}
+
+.modal-backdrop {
+  z-index: 1 !important;
+}
+
+#addStu, #deleteStu, #addBtn, #deleteBtn {
+  color: white !important;
+  border:  rgba(87, 0, 99, 0.384) !important;
+  background:   rgba(87, 0, 99, 0.384) !important;
+  margin: 5px;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+span {
+  display: inline-block;
 }

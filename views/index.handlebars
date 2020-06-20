@@ -5,29 +5,98 @@
 <main class = "containter">
   <div class = "row">
     <div class = "card" id="external-events">
-        <p>
-        <strong>Students</strong>
+      <p>
+        <h2>Students</h2>
+          
+            <div>
+                <button id = "addStu" type="button" class="btn" data-toggle="modal" data-target="#modal1" data-toggle="tooltip" data-placement="bottom" title="Add a Student">
+                  <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
+                    <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
+                    <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                  </svg>
+                </button>
 
-        <button class = "button" data-toggle="tooltip" data-placement="bottom" title="Add a Student">
-          <svg class="bi bi-plus-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
-            <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
-            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-          </svg>
-        </button>
-        <button class = "button" data-toggle="tooltip" data-placement="bottom" title="Delete Student">
-          <svg class="bi bi-x-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
-          </svg>
-        </button>
-        
+                <div class="modal fade" id="modal1" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add a student</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="form-group">
+                            <h5 class="form-text">Please enter the first and last name of the student you would like to add.</h5>
+                            <label for="firstName">First Name:</label>
+                            <input type="name" class="form-control" id="firstName" >
+                          </div>
+                          <div class="form-group">
+                            <label for="lastName">Last Name:</label>
+                            <input type="name" class="form-control" id="lastName">
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id = "addBtn" class="btn">Add Student</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <span><h6>Add a Student</h6></span>
+            </div>
+      
 
-        </p>
+  
 
-        {{#each Students}}
-          <div class="fc-event" id="student">{{first_name}} {{last_name}}</div>
-        {{/each}}
-        
+          <div>
+              <button id = "deleteStu" type="button" class="btn" data-toggle="modal" data-target="#modal2" data-toggle="tooltip" data-placement="bottom" title="Add a Student">              <svg class="bi bi-x-circle-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.146-3.146a.5.5 0 0 0-.708-.708L8 7.293 4.854 4.146a.5.5 0 1 0-.708.708L7.293 8l-3.147 3.146a.5.5 0 0 0 .708.708L8 8.707l3.146 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.146z"/>
+                </svg>
+              </button>
+              
+
+              <div class="modal fade" id="modal2" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Delete a Student</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                          <h5 class="form-text">Please enter the first and last name of the student you would like to delete.</h5>
+                          <label for="firstName">First Name:</label>
+                          <input type="name" class="form-control" id="dfirstName" >
+                        </div>
+                        <div class="form-group">
+                          <label for="lastName">Last Name:</label>
+                          <input type="name" class="form-control" id="dlastName">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id = "deleteBtn" class="btn">Delete Student</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <span><h6>Delete a Student</h6></span>
+          </div>
+
+    
+
+    {{#each Students}}
+      <div class="fc-event" id="student">{{first_name}} {{last_name}}</div>
+    {{/each}}
+    </p>
     </div>
 
     <div id="calendar"></div>
