@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "bc2020",
+    "password": "root",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
