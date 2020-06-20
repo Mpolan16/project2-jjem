@@ -7,7 +7,7 @@ html, body {
 }
 
 #external-events {
-  position: fixed;
+  /* position: fixed; */
   z-index: 2;
 /*   top: 70px;
   left: 20px;
