@@ -21,8 +21,8 @@ html, body {
   border: rgba(87, 0, 99, 0.384);
   background:  rgba(87, 0, 99, 0.384);
   margin: 1.1em 0;
-  cursor: move;
   padding: 3px;
+ 
 }
  
 a {
