@@ -9,9 +9,9 @@ html, body {
 #external-events {
   position: fixed;
   z-index: 2;
-  top: 70px;
+/*   top: 70px;
   left: 20px;
-  width: 13%;
+  width: 13%; */
   padding: 0 10px;
   border: 1px solid #ccc;
   background: #eee;
