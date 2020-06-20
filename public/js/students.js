@@ -51,6 +51,7 @@ $(document).on("click", "#deleteBtn", handleDeleteStudent);
   function upsertStudent(studentData) {
       console.log(studentData);
     $.post("/api/student", studentData)
+    window.location.replace("/");
   }
   
   //when close is clicked fields are cleared
