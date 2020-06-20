@@ -1,13 +1,20 @@
 <header>
-  <div class="jumbotron jumbotron-fluid">
   <div class="container">
-    <h1 class="display-4" id="smoslHeader">Student Management System for Online Learning</h1>
-    <p class="lead"></p>
+  <div class="row">
+    <div class="col-sm">
+        <div class="jumbotron jumbotron-fluid">
+          <div class="container">
+            <h1 class="display-4" id="smoslHeader">Student Management System for Online Learning</h1>
+            <p class="lead"></p>
+          </div>
+    </div>
   </div>
+</div>
 </header>
     
-<main class = "containter">
+<main class = "container">
   <div class = "row">
+    <div class="col-sm-2">
     <div class = "card" id="external-events">
       <p>
         <h2>Students</h2>
@@ -108,8 +115,13 @@
     {{/each}}
     </p>
     </div>
+    </div>
 
-    <div id="calendar"></div>
+{{!-- calendar row --}}
+  <div class="col-sm">
+      <div class="card" id="calendar"></div>
+    </div>
+  </div>
 
     <!-- code for calendar edit event modal -->
     <div class="modal fade" id="calendarModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="calendarModalLabel" aria-hidden="true">
