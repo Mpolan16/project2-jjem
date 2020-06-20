@@ -21,8 +21,8 @@ html, body {
   border: rgba(87, 0, 99, 0.384);
   background:  rgba(87, 0, 99, 0.384);
   margin: 1.1em 0;
-  cursor: move;
   padding: 3px;
+ 
 }
  
 a {
@@ -121,6 +121,7 @@ span {
   display: inline-block;
 }
 
+
 .fc-button {
   background-color: #2b2d42;
   border: #2b2d42;
@@ -129,4 +130,13 @@ span {
 .fc-prev-button:hover .fc-icon-chevron-left, 
 .fc-next-button:hover .fc-icon-chevron-right {
   color: #deaaff;
+=======
+#smoslHeader {
+  text-align: center;
+  color:  rgba(87, 0, 99, 0.384);
+}
+
+.jumbotron {
+  background-color: white;
+
 }

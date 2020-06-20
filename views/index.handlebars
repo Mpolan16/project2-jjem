@@ -1,5 +1,9 @@
-<header class="navbar navbar-light bg-light">
-    <div class="navbar-brand mb-0 h1 text-center">Student Management System for Online Learning</div>
+<header>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4" id="smoslHeader">Student Management System for Online Learning</h1>
+    <p class="lead"></p>
+  </div>
 </header>
     
 <main class = "containter">
@@ -69,16 +73,22 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form>
+                    <form>
                         <div class="form-group">
                           <h5 class="form-text">Please enter the first and last name of the student you would like to delete.</h5>
-                          <label for="firstName">First Name:</label>
-                          <input type="name" class="form-control" id="dfirstName" >
                         </div>
-                        <div class="form-group">
-                          <label for="lastName">Last Name:</label>
-                          <input type="name" class="form-control" id="dlastName">
-                        </div>
+                        {{!-- <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown button
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            {{#each Students}}
+                              <a class="fc-event dropdown-item deleteStu" href="#" id={{id}}>{{first_name}} {{last_name}}</a>
+                            {{/each}}
+                          </div>
+                        </div> --}}
+                          <label for="student-delete">Students:</label>
+                          <select id="student-delete" class="form-control"></select> 
                       </form>
                     </div>
                     <div class="modal-footer">
@@ -94,7 +104,7 @@
     
 
     {{#each Students}}
-      <div class="fc-event" id="student">{{first_name}} {{last_name}}</div>
+      <div class="fc-event" id={{id}}>{{first_name}} {{last_name}}</div>
     {{/each}}
     </p>
     </div>
