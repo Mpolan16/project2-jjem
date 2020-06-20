@@ -130,7 +130,9 @@ span {
 .fc-prev-button:hover .fc-icon-chevron-left, 
 .fc-next-button:hover .fc-icon-chevron-right {
   color: #deaaff;
-=======
+}
+
+
 #smoslHeader {
   text-align: center;
   color:  rgba(87, 0, 99, 0.384);
