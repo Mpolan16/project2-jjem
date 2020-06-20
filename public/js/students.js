@@ -21,6 +21,7 @@ $(document).ready(function() {
   
   function handleAddStudent() {
       event.preventDefault();
+      $('#modal1').modal("hide");
       // Don't do anything if the name fields hasn't been filled out
       if (!firstName.val().trim().trim() || !lastName.val().trim().trim() ) {
         return;
@@ -88,5 +89,5 @@ $(document).ready(function() {
   
   })
   
-  $('#modal1').modal();
+ 
   $('#modal2').modal();
