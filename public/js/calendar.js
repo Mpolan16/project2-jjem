@@ -41,36 +41,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 textColor: 'white' // a non-ajax option
       },
       eventClick: function(info) { //clicking an event fires this
-        function formatDate(date) {
-            let month = date.getMonth() +1;
-            month = month < 10 ? '0'+month : month;
-            let day = date.getDate();
-            day = day < 10 ? '0'+day : day;
-            const strDate = date.getFullYear() + "-" + month + "-" + day
-            let hours = date.getHours();
-            hours = hours < 10 ? '0'+hours : hours;
-            let minutes = date.getMinutes();
-            minutes = minutes < 10 ? '0'+minutes : minutes;
-            const strTime = "T" + hours + ':' + minutes;            
-            return strDate + strTime;
-        }
+                function formatDate(date) {
+                    let month = date.getMonth() +1;
+                    month = month < 10 ? '0'+month : month;
+                    let day = date.getDate();
+                    day = day < 10 ? '0'+day : day;
+                    const strDate = date.getFullYear() + "-" + month + "-" + day
+                    let hours = date.getHours();
+                    hours = hours < 10 ? '0'+hours : hours;
+                    let minutes = date.getMinutes();
+                    minutes = minutes < 10 ? '0'+minutes : minutes;
+                    const strTime = "T" + hours + ':' + minutes;            
+                    return strDate + strTime;
+                }
 
-        //student dropdown retrieve      
-        $.ajax({
-            url:"/api/students",
-            type: "GET",
-            dataType: 'JSON',
-            success: function (data) {                
-                $('#students').html('');
-                $.each(data, function(key, val){
-                    if (info.event.title.trim() == val.first_name.trim() + " " + val.last_name.trim()) {
-                        $('#students').append('<option id="' + val.id + '" selected>' + val.first_name.trim() + " " + val.last_name.trim() + '</option>');
-                    }
-                    else {
-                        $('#students').append('<option id="' + val.id + '">' + val.first_name.trim() + " " + val.last_name.trim() + '</option>');
-                    }
-                    
-                })
+                //student dropdown retrieve      
+                $.ajax({
+                    url:"/api/students",
+                    type: "GET",
+                    dataType: 'JSON',
+                    success: function (data) {                
+                        $('#students').html('');
+                        $.each(data, function(key, val){
+                            if (info.event.title.trim() == val.first_name.trim() + " " + val.last_name.trim()) {
+                                $('#students').append('<option id="' + val.id + '" selected>' + val.first_name.trim() + " " + val.last_name.trim() + '</option>');
+                            }
+                            else {
+                                $('#students').append('<option id="' + val.id + '">' + val.first_name.trim() + " " + val.last_name.trim() + '</option>');
+                            }
+                            
+                        })
 
                 //populate the rest of the modal
                 $("#description").val(info.event.extendedProps.description);
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
                 var newEvent = {
                     title: info.draggedEl.textContent,
-                    description: info.draggedEl.textContent,
+                    //description: info.draggedEl.textContent,
                     start: info.dateStr,
                     end: endDate
                 };
@@ -205,28 +205,42 @@ document.addEventListener('DOMContentLoaded', function() {
         savebtn.addEventListener("click", updateCalendar);
         
         function updateCalendar() {
+
+            let studentName = $("#students").val()
+            let studentID = $("#students").find('option:selected').attr('id');
+            let startDt = $("#startdt").val();
+            let endDt = $("#enddt").val();            
+
+            if (startDt >= endDt) {
+                $("#modalErrorText").attr("class", "show");
+                return;
+            }
+            else {
+                $("#modalErrorText").attr("class", "hide");
+            }
+
             $('#calendarModal').modal('hide');
     
             var updatedEvent = {
-                title: $("#students").val(),
+                title: studentName,
                 description: $("#description").val(),
-                start: $("#startdt").val(),
-                end: $("#enddt").val(),
+                start: startDt,
+                end: endDt,
+                StudentId: studentID,
                 id: $("#calendarID").text()
-            };        
+            };                    
             
             $.ajax( {
                 url: "/api/calendar",
                 type: "PUT",
                 data: updatedEvent,
                 success: function() {
-                    calendar.refetchEvents(); //re-retrieves the calendar
-                     
+                    calendar.refetchEvents(); //re-retrieves the calendar                     
                 }                    
     
             })
         };
-        //end event edit modal save                     
+        //end event edit modal save
 
         //event modal delete
         var deleteBtn = document.getElementById('deleteEvent');
