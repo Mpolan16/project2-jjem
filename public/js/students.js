@@ -4,20 +4,23 @@ $(document).ready(function() {
 
   const firstName = $("#firstName");
   const lastName = $("#lastName");
-  const deleteFirst = $("#dfirstName");
-  const deleteLast = $("#dlastName");
+  
   //const stuList = $("#deleteStu");
   
   // var addBtn = document.getElementById("addBtn");
   //         addBtn.addEventListener("click", handleAddStudent);
   
-  //stuList.on("click", handleDeleteStudent);
+ 
+$(document).on("click", "#addBtn", handleAddStudent);
+$(document).on("click", "#deleteStu", loadStudents);
+$(document).on("click", "#deleteBtn", handleDeleteStudent); 
+
+
+//   var deleteStudentList = document.getElementById("deleteStu");
+//   deleteStudentList.addEventListener("click", loadStudents);
   
-  var deleteStudentList = document.getElementById("deleteStu");
-  deleteStudentList.addEventListener("click", loadStudents);
-  
-  var deleteBtn = document.getElementById("deleteBtn");
-  deleteBtn.addEventListener("click", handleDeleteStudent);
+//   var deleteBtn = document.getElementById("deleteBtn");
+//   deleteBtn.addEventListener("click", handleDeleteStudent);
   
   function handleAddStudent() {
       event.preventDefault();
