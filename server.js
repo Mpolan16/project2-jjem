@@ -5,13 +5,13 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-var connection = require("connection");
+
 
 // Sets up the Express App
 // =============================================================
 var app = express();
-// var PORT = process.env.JAWSDB_URL || 8080;
-connection;
+var PORT = process.env.JAWSDB_URL || 8080;
+
 
 
 // Requiring our models for syncing

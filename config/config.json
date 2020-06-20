@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "bc2020",
+    "password": "bootcamp2020",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "bc2020",
+    "password": "bootcamp2020",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -17,10 +17,11 @@
   },
   "production": {
     "username": "root",
-    "password": "bc2020",
+    "password": "bootcamp2020",
     "database": "smsol",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": false,
+    "use_env_variable": "JAWSDB_URL"
   }
 }
