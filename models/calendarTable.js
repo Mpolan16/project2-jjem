@@ -9,5 +9,15 @@ module.exports = function(sequelize, DataTypes) {
     {
         freezeTableName: true
     });
+
+    Calendar.associate = function (models) {
+      Calendar.belongsTo(models.Students, {
+        foreignKey: {
+          allowNull: false
+        },
+        onDelete: "cascade",
+        hooks: true
+      });
+    };
     return Calendar;
   };

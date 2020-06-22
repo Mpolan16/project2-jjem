@@ -7,6 +7,7 @@ html, body {
 }
 
 #external-events {
+  /* position: fixed; */
   z-index: 2;
   padding: 0 10px;
   border: 1px solid #ccc;
@@ -53,7 +54,7 @@ a {
 }
 
 #calendarModal {
-  max-width: 300px;
+  max-width: 400px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -65,7 +66,7 @@ a {
 }
 
 #deleteEvent{
-  margin-right: 80px;
+  margin-right: 170px;
 }
 
 #editModalHeader{
@@ -137,4 +138,9 @@ span {
 .jumbotron {
   background-color: white;
 
+}
+
+.scroll {
+  max-height: 475px;
+  overflow-y: auto;
 }

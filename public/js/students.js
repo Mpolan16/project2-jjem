@@ -35,8 +35,14 @@ $(document).on("click", "#deleteBtn", handleDeleteStudent);
     // A function for creating a student
   
   function upsertStudent(studentData) {
-      console.log(studentData);
-    $.post("/api/student", studentData)
+          $.ajax({
+            url:"/api/student",
+            type: "POST",
+            data: studentData,
+            success: function (data) {                
+              window.location.replace("/");
+            }
+          });
   }
   
   //when close is clicked fields are cleared

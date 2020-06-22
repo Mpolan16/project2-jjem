@@ -48,7 +48,8 @@ module.exports = function(app) {
       title: req.body.title,
       description: req.body.description,
       start: req.body.start,
-      end: req.body.end
+      end: req.body.end,
+      StudentId: req.body.studentID
     }).then(function(dbCalendar) {
       // We have access to the new event as an argument inside of the callback function
       res.json(dbCalendar);
@@ -91,12 +92,12 @@ module.exports = function(app) {
 
   // PUT route for updating an event.
   app.put("/api/calendar", function(req, res) {
-            
     db.Calendar.update({
       title: req.body.title,
       description: req.body.description,
       start: req.body.start,
-      end: req.body.end
+      end: req.body.end,
+      StudentId: req.body.StudentId
     }, 
     {
       where: {

@@ -136,7 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: info.draggedEl.textContent,
                     //description: info.draggedEl.textContent,
                     start: info.dateStr,
-                    end: endDate
+                    end: endDate,
+                    studentID: info.draggedEl.id
                 };
                 
                 $.ajax( {
@@ -211,8 +212,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let studentName = $("#students").val()
             let studentID = $("#students").find('option:selected').attr('id');
-            let startDt = $("#startdt").val();
-            let endDt = $("#enddt").val();            
+            //  let startDt = $("#startdt").val();
+            //  let endDt = $("#enddt").val();
+            let startDt = new Date($("#startdt").val()).toGMTString()
+            let endDt = new Date($("#enddt").val()).toGMTString()                        
 
             if (startDt >= endDt) {
                 $("#modalErrorText").attr("class", "show");
