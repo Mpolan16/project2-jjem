@@ -133,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     title: info.draggedEl.textContent,
                     //description: info.draggedEl.textContent,
                     start: info.dateStr,
-                    end: endDate
+                    end: endDate,
+                    studentID: info.draggedEl.id
                 };
                 
                 $.ajax( {
