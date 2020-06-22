@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 textColor: 'white' // a non-ajax option
       },
+      eventOverlap: function(stillEvent, movingEvent) {
+        return stillEvent.allDay && movingEvent.allDay;
+      },
       eventClick: function(info) { //clicking an event fires this
                 function formatDate(date) {
                     let month = date.getMonth() +1;
