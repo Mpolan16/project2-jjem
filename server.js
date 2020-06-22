@@ -38,8 +38,8 @@ require("./routes/html-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 //IMPORTANT TO REMOVE BEFORE PROD - force = true rebuilds all db objects (deleting all data)
-//db.sequelize.sync({ force: true }).then(function() {
-db.sequelize.sync().then(function() {  
+db.sequelize.sync({ force: true }).then(function() {
+//db.sequelize.sync().then(function() {  
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
