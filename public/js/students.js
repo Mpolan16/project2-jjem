@@ -1,26 +1,12 @@
 $(document).ready(function() {
-
-
-
   const firstName = $("#firstName");
   const lastName = $("#lastName");
-  
-  //const stuList = $("#deleteStu");
-  
-  // var addBtn = document.getElementById("addBtn");
-  //         addBtn.addEventListener("click", handleAddStudent);
   
  
 $(document).on("click", "#addBtn", handleAddStudent);
 $(document).on("click", "#deleteStu", loadStudents);
 $(document).on("click", "#deleteBtn", handleDeleteStudent); 
 
-
-//   var deleteStudentList = document.getElementById("deleteStu");
-//   deleteStudentList.addEventListener("click", loadStudents);
-  
-//   var deleteBtn = document.getElementById("deleteBtn");
-//   deleteBtn.addEventListener("click", handleDeleteStudent);
   
   function handleAddStudent() {
       event.preventDefault();

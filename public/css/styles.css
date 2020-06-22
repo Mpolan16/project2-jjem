@@ -9,9 +9,6 @@ html, body {
 #external-events {
   /* position: fixed; */
   z-index: 2;
-/*   top: 70px;
-  left: 20px;
-  width: 13%; */
   padding: 0 10px;
   border: 1px solid #ccc;
   background: #eee;
@@ -40,7 +37,7 @@ a {
 }
 
 #calendar {
-  max-width: 900px;
+  max-width: 100%;
   margin: 20px auto;
 }
   

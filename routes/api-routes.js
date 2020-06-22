@@ -30,15 +30,15 @@ module.exports = function(app) {
   });  
 
   // GET route for getting one student
-  app.get("/api/students/:id", function(req, res) {
-    db.Students.findOne({
-      where: {
-        id: req.params.id
-      }      
-    }).then(function(dbStudent) {      
-      res.json(dbStudent);
-    });
-  });
+  // app.get("/api/students/:id", function(req, res) {
+  //   db.Students.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     }      
+  //   }).then(function(dbStudent) {      
+  //     res.json(dbStudent);
+  //   });
+  // });
 
   // POST route for saving a new event
   app.post("/api/calendar", function(req, res) {
