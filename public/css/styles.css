@@ -119,16 +119,44 @@ span {
 }
 
 
-.fc-button {
-  background-color: #2b2d42;
-  border: #2b2d42;
+/* .fc-button {
+  background-color:  rgba(31, 0, 34, 0.879);
+  border: rgba(31, 0, 34, 0.879);
+} */
+
+
+.fc-button-primary:not(:disabled).fc-button-active {
+  background-color: gray;
+  border-color: gray;
 }
+
+button.fc-next-button.fc-button.fc-button-primary > span, 
+button.fc-prev-button.fc-button.fc-button-primary > span, 
+.fc-button-group>.fc-button {
+  color: white;
+  background-color: rgba(31, 0, 34, 0.879);
+  border-color: rgba(31, 0, 34, 0.879);
+}
+
+button.fc-next-button.fc-button.fc-button-primary > span:hover, 
+button.fc-prev-button.fc-button.fc-button-primary > span:hover {
+  color:rgba(31, 0, 34, 0.879);
+  background-color:  white;
+  border-color: white;
+  border-radius: 3px;
+
+}
+
+
+/* 
 
 .fc-prev-button:hover .fc-icon-chevron-left, 
 .fc-next-button:hover .fc-icon-chevron-right {
-  color: #deaaff;
+  color: white;
+  background-color: rgba(31, 0, 34, 0.879);
+  border-color: rgba(31, 0, 34, 0.879);
 }
-
+ */
 
 #smoslHeader {
   text-align: center;
@@ -137,10 +165,17 @@ span {
 
 .jumbotron {
   background-color: white;
+  padding-bottom: 5px !important;
 
 }
 
 .scroll {
   max-height: 475px;
   overflow-y: auto;
+}
+
+.col-sm-9 {
+  position: relative;
+  top: -8px;
+  bottom: 8px;
 }
