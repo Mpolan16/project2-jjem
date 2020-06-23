@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       plugins: [ 'interaction', 'timeGrid' ],
       header: {
         //left: 'prevYear,prev,next,nextYear today',
-        left: 'prev,next today',
+        left: 'prev,next',
         center: 'title',
         //right: 'dayGridMonth,dayGridWeek,dayGridDay' //different controls for dayGrid
         right: 'timeGridWeek,timeGridDay'
