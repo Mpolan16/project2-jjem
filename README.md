@@ -1,8 +1,8 @@
-# Student Management System for Online Learning (SMSOL)
+# Tutor Tracker
 
 ## Description
 
-The Student Management System for Online Learning (SMSOL) is a easy to use Web Application for busy teachers to organize student meetings.
+The Tutor Tracker is an easy to use Web Application for busy educators to organize student meetings.
 
 ## Table of Contents
 
@@ -11,31 +11,16 @@ The Student Management System for Online Learning (SMSOL) is a easy to use Web A
 
 * [Technology](#Technology)
 
-* [License](#license)
-
-* [Contributing](#contributing)
-
 * [Questions](#questions)
-
-
 
 ## Usage
 
 https://afternoon-eyrie-99732.herokuapp.com
 
-The Student Management System for Online Learning (SMSOL) is a easy to use Web Application for busy teachers to organize student meetings. This application allows teachers to add students to their list, drag and drop them to the interactive calendar and delete or reschedule as needed. When adding students a modal will appear to input the student information. The modal will also be a useful tool for updating currently scheduled students or deleting students from the calendar.
+This application allows teachers to add students to their list, drag and drop them to the interactive calendar and delete or reschedule as needed. When adding students a modal will appear to input the student information. The modal will also be a useful tool for updating currently scheduled students or deleting students from the calendar.
 
 ## Technology
 Express-Handlebars, Express, Node.js, Sequelize, FullCalendar.io, Moment.js, Bootstrap, JQuery, Javascript, HTML, CSS
-
-## License
- This project is licensed under ![badge](https://img.shields.io/badge/License-MIT-blue).
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
 
 ## Questions
 
