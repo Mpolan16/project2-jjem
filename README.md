@@ -14,6 +14,7 @@ The Tutor Tracker is an easy to use Web Application for busy educators to organi
 * [Questions](#questions)
 
 ## Usage
+![thumbnail of app](assets/Tutor_Tracker_ScreenShot-1.png)
 
 https://afternoon-eyrie-99732.herokuapp.com
 
