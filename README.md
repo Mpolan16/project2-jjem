@@ -14,7 +14,7 @@ The Tutor Tracker is an easy to use Web Application for busy educators to organi
 * [Questions](#questions)
 
 ## Usage
-
+![picture of Tutor Tracker App](Tutor_Tracker_ScreenShot-1.png)
 https://afternoon-eyrie-99732.herokuapp.com
 
 This application allows teachers to add students to their list, drag and drop them to the interactive calendar and delete or reschedule as needed. When adding students a modal will appear to input the student information. The modal will also be a useful tool for updating currently scheduled students or deleting students from the calendar.
